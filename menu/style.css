@@ -1,0 +1,202 @@
+html,
+body {
+	height: 100% !important;
+	width: 100% !important;
+	overflow-x: hidden !important;
+	overflow-y: visible !important;
+	background-color: black;
+}
+
+body {
+	background-color: black;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.75),
+			rgba(0, 0, 0, 0.5)), url('/media/Mad-Jack-s-Interior-with-TVs_6B4AD80B-5056-A36F-233C860925E98C0C-6b4ad7745056a36_6b4ad86d-5056-a36f-23078ba42eb6533e-min.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	overflow-x: hidden;
+}
+
+:root {
+	--fifty-color: #141414;
+	--thirty-color: #C2F05D;
+	--ten-color: white;
+	--loading-body-color: black;
+	--body-color: #080808;
+
+	--cocktails-text-color: #FFDB28;
+	--beers-text-color: #FF9328;
+}
+
+/* Upper Half Styling*/
+
+:is(.title) {
+	position: absolute;
+	left: 7.5%;
+	top: 3.5%;
+
+	-webkit-animation: glow_cocktails 0.75s ease-in-out infinite alternate;
+	-moz-animation: glow_cocktails 0.75s ease-in-out infinite alternate;
+	animation: glow_cocktails 0.75s ease-in-out infinite alternate;
+
+	color: var(--cocktails-text-color);
+	font-family: "main";
+	font-size: 10vw;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+:is(.break) {
+	position: absolute;
+	left: 7.5%;
+	top: 25%;
+
+	background-color: var(--thirty-color);
+
+	width: 75px;
+	height: 6.5px;
+}
+
+:is(.subtitle) {
+	position: absolute;
+	left: 7.5%;
+	top: 13.5%;
+
+	-webkit-animation: glow_beers 0.75s ease-in-out infinite alternate;
+	-moz-animation: glow_beers 0.75s ease-in-out infinite alternate;
+	animation: glow_beers 0.75s ease-in-out infinite alternate;
+
+	color: var(--beers-text-color);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 5vw;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+:is(.phone_vector) {
+	position: absolute;
+	left: 7.5%;
+	top: 30%;
+
+	width: 25px;
+	height: auto;
+}
+
+:is(.phone_number) {
+	position: absolute;
+	left: 17.5%;
+	top: 30%;
+
+	color: var(--ten-color);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 0.95em;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+:is(.globe_vector) {
+	position: absolute;
+	left: 7.5%;
+	top: 35%;
+
+	width: 25px;
+	height: auto;
+}
+
+:is(.website_link) {
+	position: absolute;
+	left: 17.5%;
+	top: 35.5%;
+
+	color: var(--ten-color);
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: 0.95em;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+
+
+/* Lower Half Styling */
+
+:is(.container) {
+	width: 80%;
+	height: auto;
+	background-color: transparent;
+
+	position: absolute;
+	top: 45%;
+	left: 5%;
+
+	& > :is(.button) {
+		display: none;
+		width: 100%;
+		height: 60px;
+		background: transparent;
+		border: none;
+		position: relative;
+		margin-bottom: 10px;
+
+		animation: glow 0.75s ease-in-out infinite alternate;
+
+		color: var(--thirty-color);
+		font-family: "main";
+		font-size: 2.5em;
+		font-weight: 100;
+		text-decoration: none;
+		text-transform: uppercase;
+		text-align: left;
+
+		cursor: pointer;
+
+		&> :is(.arrow-icon) {
+			fill: var(--thirty-color);
+			float: right;
+			position: absolute;
+			right: 10%;
+			transform: rotate(-90deg);
+			transition: all 0.5s;
+		}
+	}
+}
+
+/* Animations */
+
+@keyframes glow {
+	from {
+		text-shadow: 0 0 1.5px rgba(194, 240, 93, 0.6), 0 0 3px rgba(194, 240, 93, 0.6), 0 0 6px rgba(194, 240, 93, 0.6);
+	}
+
+	to {
+		text-shadow: 0 0 3px rgba(194, 240, 93, 0.6), 0 0 6px rgba(194, 240, 93, 0.6), 0 0 12px rgba(194, 240, 93, 0.6);
+	}
+}
+
+@keyframes glow_cocktails {
+	from {
+		text-shadow: 0 0 1.5px rgba(255, 219, 40, 0.6), 0 0 3px rgba(255, 219, 40, 0.6), 0 0 6px rgba(255, 219, 40, 0.6);
+	}
+
+	to {
+		text-shadow: 0 0 3px rgba(255, 219, 40, 0.6), 0 0 6px rgba(255, 219, 40, 0.6), 0 0 12px rgba(255, 219, 40, 0.6);
+	}
+}
+
+@keyframes glow_beers {
+	from {
+		text-shadow: 0 0 1.5px rgba(255, 147, 40, 0.6), 0 0 3px rgba(255, 147, 40, 0.6), 0 0 6px rgba(255, 147, 40, 0.6);
+	}
+
+	to {
+		text-shadow: 0 0 3px rgba(255, 147, 40, 0.6), 0 0 6px rgba(255, 147, 40, 0.6), 0 0 12px rgba(255, 147, 40, 0.6);
+	}
+}
+
+/* FONT FACES */
+
+@font-face {
+	font-family: "main";
+	src: url("/font_data/main.woff2"),
+		url("/font_data/main.woff");
+}

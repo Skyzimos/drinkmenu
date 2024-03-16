@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Mad Jacks</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="/device/rotation.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div class='overlay' id='overlay'></div>
+	<h1 class='greeting' id='greeting'>
+		Good Evening,
+	</h1>
+
+	<h2 class='server' id='server'>
+		welcome to Mad Jacks
+	</h2>
+
+	<div class='notice'>
+		<h1 class='notice-header'>
+			Notice:
+		</h1>
+
+		<p class='notice-text'>
+			We are excited to announce the launch of our new Drink Menu! After a long wait, it has finally gotten to the point where it is ready for you to use it.
+			<br>
+			<br>
+			Here's an overview of how everything works:
+			<br>
+			<br>
+			To return to the main menu at any time, click the <b>Yellow "Jack's"</b> text at the top of your screen.
+			<br>
+			<br>
+			To return back to the menu section you were in <i>(i.e. "Beers")</i> after clicking on a drink <i>(i.e. "Modelo")</i>, click the <b>Orange</b> text <b>under</b> the <b>Yellow "Jack's"</b> text.
+			<br>
+			<br>
+			Please share your thoughts with your bartender or server so we can improve your experience while using this Drink Menu!
+			<br>
+			<br>
+			<b><i>Read the navigation guide above before clicking "Continue to Menu" for the best & fastest user experience.</i></b>
+		</p>
+
+		<button class='agree'>
+			Continue to Menu
+		</button>
+	</div>
+
+	<div class="turnDeviceNotification"></div>
+	<script defer type='module'>
+		if (localStorage.getItem('__agree.clicked')) {
+			// window.location.href = '/menu';
+		}
+	</script>
+	<script src="script.js"></script>
+	<script src="/device/rotation.js"></script>
+</body>
+
+</html>
