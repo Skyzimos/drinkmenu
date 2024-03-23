@@ -8,6 +8,7 @@
 	<title>Mad Jacks | Drink Menu</title>
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<link href="/device/rotation.css" rel="stylesheet" type="text/css" />
+	<link href="/navbar/nav.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -21,15 +22,38 @@
 	</h2>
 
 	<div class='break' id='break_1'></div>
-	<img src='/image_data/phone_vector.png' class='phone_vector' id='phone_vector'>
+	<img class='phone_vector' id='phone_vector'>
 	<a class='phone_number' id='phone_number' href='tel:763-432-6263'>
 		+763-432-6263
 	</a>
 
-	<img src='/image_data/globe_vector.png' class='globe_vector' id='globe_vector'>
+	<img class='globe_vector' id='globe_vector'>
 	<a class='website_link' id='website_link' href='https://madjacksbrooklynpark.com' target='_blank'>
 		www.madjacks.com
 	</a>
+
+	<div class='topbar-rightcontent mobile'>
+		<label class="burger" for="burger">
+			<input type="checkbox" id="burger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</label>
+	</div>
+
+	<div class='hamburger-menu blur' id='hamburger-menu'>
+		<div class='mobile'>
+			<nav>
+				<ul class='dynamic'>
+					<li class='sample'>
+						<a class='a'>
+							
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 
 	<div class='container'>
 		<button class='button' id=''>
@@ -42,6 +66,7 @@
 	
 	<div class="turnDeviceNotification"></div>
 	<script src='script.js'></script>
+	<script src='/navbar/nav.js'></script>
 	<script src="/device/rotation.js"></script>
 </body>
 

@@ -1,5 +1,11 @@
+let production = false
+
 let module = {};
 let list = sessionStorage.getItem('__list.name') == 'Specialty' ? 'Specialty Drinks' : sessionStorage.getItem('__list.name');
+
+if (list == '__home') {
+	window.location.href = '/menu/';
+}
 
 let title = document.querySelector('.title');
 let subtitle = document.querySelector('.subtitle');
@@ -24,6 +30,29 @@ let list_data = {
 			'Mwiller High Life',
 			'Stella Artois',
 			'Bud Light Lime',
+		]
+	},
+	['Tap Beers']: {
+		subtitle: '-',
+		drinks: [
+			'Coors Light',
+			'Miller Lite',
+			'Fresh Squeezed IPA',
+			'Castle Danger Cream Ale',
+			'Downeast Strawberry',
+			'Blue Moon',
+			'Warpigs Foggy Geezer',
+			'Alaskan Amber',
+			'Michelob Golden Light',
+			'Sam Adams Cold Snap',
+			'Pacifico',
+			'Surly Furious',
+			'Shiner Bock',
+			'Twisted Tea',
+			'Summit EPA',
+			'Honeyweiss',
+			'Liftbridge Mango Blonde',
+			'Angry Orchard'
 		]
 	},
 	['Seltzers']: {
@@ -58,7 +87,12 @@ let list_data = {
 			'Surfer on Acid',
 			'Scooby Snack',
 			'Bong Water',
-			'F***ing Awesome'
+			'F***ing Awesome',
+			'Liquid Marijuana',
+			'Southern Hospitality',
+			'Orange Peel',
+			'Jack Apple Sour',
+			'Liquid Marijuana',
 		]
 	},
 	['Cocktails']: {
@@ -68,23 +102,21 @@ let list_data = {
 			'Blue MF',
 			'Tokyo Tea',
 			'Bahama Mama',
-			'Jackup Punch',
-			'MAI TAI',
+			'Jackup Punch', // need pic
+			'MAI TAI', // need pic
 			'Sex on the Beach',
-			'Colorado Bulldog',
-			'Fruit Roll Up',
-			'Lime Margarita',
-			'Liquid Marijuana',
+			'Colorado Bulldog', // need pic
+			'Fruit Roll Up', // on phone
+			'Lime Margarita', // need pic
 			'Blue Hawaiian',
-			"Courtney's Coffee",
-			'Old Fashioned',
-			'Manhattan',
+			"Courtney's Coffee", // need pic
+			'Old Fashioned', // need pic
+			'Manhattan', // need pic
 			'White Russian',
-			'Southern Hospitality',
 			'Greyhound',
-			'Tequila Sunrise',
-			'Iron Butterfly',
-			'Black Russian',
+			'Tequila Sunrise', // on phone
+			'Iron Butterfly', // need pic
+			'Black Russian', // need pic (make first, then make iron butterfly)
 		]
 	},
 	['Martinis']: {
@@ -127,6 +159,15 @@ function Module(Name, Function) {
 	return module[Name];
 }
 
+let GetParams = Module('__get_params', function(URL) {
+	const Params = {};
+	URL.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(M, Key, Value) {
+		Params[Key] = decodeURIComponent(Value);
+	});
+
+	return Params;
+});
+
 let Encrypt = Module('__encrypt', function(_param) {
 	return btoa(_param);
 });
@@ -161,7 +202,48 @@ let Page = Module('_title', function(Name) {
 	Name = list;
 	document.title = 'Mad Jacks | ' + Name;
 	title.textContent = Name;
+});
+
+let touchstartX = 0
+let touchendX = 0
+let touchstartY = 0
+let touchendY = 0
+
+function checkDirection() {
+	let deltaX = Math.abs(touchendX - touchstartX);
+	let deltaY = Math.abs(touchendY - touchstartY);
+
+	if (deltaX < deltaY && deltaY > 5 && deltaX * 0.2 < deltaY) return -1; // Vertical swipe
+	if (touchendX < touchstartX && deltaX > 5) return 1; // Left swipe
+	if (touchendX > touchstartX && deltaX > 5) return 0; // Right swipe
+
+	return -2; // No significant swipe
+}
+
+document.addEventListener('touchstart', e => {
+	touchstartX = e.changedTouches[0].screenX;
+	touchstartY = e.changedTouches[0].screenY;
 })
+
+document.addEventListener('touchend', e => {
+	touchendX = e.changedTouches[0].screenX;
+	touchendY = e.changedTouches[0].screenY;
+
+	if (checkDirection() == 0) {
+		// tring to go backward
+		window.location.href = '/menu/?rf=' + GetParams(window.location.href).rf;
+	} else if (checkDirection() > 0) {
+		// trying to go forward
+		// on the list section, go back to the previous menu item selected.
+		if (GetParams(window.location.href).rf) {
+			window.location.href = window.location.href = '/menu/view/?d=' + GetParams(window.location.href).rf;
+		} else {
+			return;
+		}
+	} else {
+		return;
+	}
+});
 
 Page();
 Load();

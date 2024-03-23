@@ -8,6 +8,7 @@
 	<title>Mad Jacks | Drink Menu</title>
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<link href="/device/rotation.css" rel="stylesheet" type="text/css" />
+	<link href="/navbar/nav.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -24,6 +25,33 @@
 		</h2>
 	</a>
 
+	<div class='topbar-rightcontent mobile'>
+		<label class="burger" for="burger">
+			<input type="checkbox" id="burger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</label>
+	</div>
+
+	<div class='hamburger-menu blur' id='hamburger-menu'>
+		<div class='mobile'>
+			<nav>
+				<ul class='dynamic'>
+					<li class='sample'>
+						<a class='a'>
+
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<div class='nav-container'>
+		
+	</div>
+
 	<div class='container'>
 		<button class='button' id=''>
 			<svg class='arrow-icon' xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 24 24'>
@@ -34,7 +62,8 @@
 	</div>
 
 	<div class="turnDeviceNotification"></div>
-	<script src='script.js'></script>
+	<script src='/menu/list/script.js'></script>
+	<script src='/navbar/nav.js'></script>
 	<script src="/device/rotation.js"></script>
 </body>
 

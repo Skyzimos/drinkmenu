@@ -11,48 +11,50 @@
 </head>
 
 <body>
-	<div class='overlay' id='overlay'></div>
-	<h1 class='greeting' id='greeting'>
-		Good Evening,
-	</h1>
-
-	<h2 class='server' id='server'>
-		welcome to Mad Jacks
-	</h2>
-
-	<div class='notice'>
-		<h1 class='notice-header'>
-			Notice:
+	<div class='bg-image'></div>
+	<div class='modal-container'>
+		<h1 class='top-text'>
+			Help make a Difference!
 		</h1>
 
-		<p class='notice-text'>
-			We are excited to announce the launch of our new Drink Menu! After a long wait, it has finally gotten to the point where it is ready for you to use it.
-			<br>
-			<br>
-			Here's an overview of how everything works:
-			<br>
-			<br>
-			To return to the main menu at any time, click the <b>Yellow "Jack's"</b> text at the top of your screen.
-			<br>
-			<br>
-			To return back to the menu section you were in <i>(i.e. "Beers")</i> after clicking on a drink <i>(i.e. "Modelo")</i>, click the <b>Orange</b> text <b>under</b> the <b>Yellow "Jack's"</b> text.
-			<br>
-			<br>
-			Please share your thoughts with your bartender or server so we can improve your experience while using this Drink Menu!
-			<br>
-			<br>
-			<b><i>Read the navigation guide above before clicking "Continue to Menu" for the best & fastest user experience.</i></b>
-		</p>
+		<h3 class='sub-text'>
+			We're selling Chocolate Bars!
+		</h2>
 
-		<button class='agree'>
-			Continue to Menu
-		</button>
+		<p class='paragraph'>
+			<span style='font-size: 2em; font-weight: 800; text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.25), 1px 1px 10px rgba(255, 255, 255, 0.25);'>Each bar is $1!</span>
+			<br>
+			<br>
+			Help in raising funds for Coon Rapids High School to support the Choir Singers. Your purchase makes a difference! Every dollar helps towards the giant performance "Bravo!" at the end of the year. Without your help, this would not be possible.
+			<br>
+			<br>
+			<span style='font-size: 1.5em; font-weight: 800; text-shadow: 1px 1px 10px rgba(255, 255, 255, 0.25), 1px 1px 10px rgba(255, 255, 255, 0.25);'>Flavors:</span>
+			<br>
+			<br>
+			&nbsp;- Caramel
+			<br>
+			&nbsp;- W.F. Crisp® (Crunch)
+			<br>
+			&nbsp;- Wafer
+			<br>
+			&nbsp;- Almond
+			<br>
+			&nbsp;- Milk Chocolate
+			<br>
+			&nbsp;- Dark Chocolate
+		</p>
 	</div>
+
+	<button class='agree'>
+		Continue to Menu
+	</button>
 
 	<div class="turnDeviceNotification"></div>
 	<script defer type='module'>
-		if (localStorage.getItem('__agree.clicked')) {
-			// window.location.href = '/menu';
+		let enabled = false
+
+		if (!enabled) {
+			window.location.href = '/menu';
 		}
 	</script>
 	<script src="script.js"></script>

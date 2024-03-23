@@ -1,4 +1,6 @@
 let module = {};
+let list = sessionStorage.getItem('__list.name') == 'Specialty' ? 'Specialty Drinks' : sessionStorage.getItem('__list.name');
+
 let subtitle = document.querySelector('.subtitle');
 let image = document.querySelector('.product-image');
 let container = document.querySelector('.container');
@@ -24,6 +26,29 @@ let list_data = {
 			'Mwiller High Life',
 			'Stella Artois',
 			'Bud Light Lime',
+		]
+	},
+	['Tap Beers']: {
+		subtitle: '-',
+		drinks: [
+			'Coors Light',
+			'Miller Lite',
+			'Fresh Squeezed IPA',
+			'Castle Danger Cream Ale',
+			'Downeast Strawberry',
+			'Blue Moon',
+			'Warpigs Foggy Geezer',
+			'Alaskan Amber',
+			'Michelob Golden Light',
+			'Sam Adams Cold Snap',
+			'Pacifico',
+			'Surly Furious',
+			'Shiner Bock',
+			'Twisted Tea',
+			'Summit EPA',
+			'Honeyweiss',
+			'Liftbridge Mango Blonde',
+			'Angry Orchard'
 		]
 	},
 	['Seltzers']: {
@@ -231,8 +256,6 @@ let Load = Module('_load', function(Name) {
 	let list = Decrypt(GetParams(window.location.href).d);
 	let list_src = list.replace(/\s+/g, '').replace(/[^a-zA-Z0-9 ]/g, '');
 
-	console.log(list)
-
 	if (list == undefined || list == null || list == '') {
 		window.location.href = '/menu/';
 		return;
@@ -240,12 +263,52 @@ let Load = Module('_load', function(Name) {
 
 	if (category == 'Shots' || category == 'Cocktails') {
 		description.textContent = list_data[category].drinks[list].description;
-	} else {
+
+		if (category == 'Cocktails') {
+			container.style.top = '60%';
+			image.src = '/product_images/' + category.toLowerCase() + '/' + list_src + '.png';
+		}
+	} else if (category !== 'Wines' && category !== 'Tap Beers') {
 		container.style.top = '60%';
 		image.src = '/product_images/' + category.toLowerCase() + '/' + list_src + '.png';
 	}
 
 	subtitle.textContent = list;
+});
+
+let touchstartX = 0
+let touchendX = 0
+let touchstartY = 0
+let touchendY = 0
+
+function checkDirection() {
+	let deltaX = Math.abs(touchendX - touchstartX);
+	let deltaY = Math.abs(touchendY - touchstartY);
+
+	if (deltaX < deltaY && deltaY > 5 && deltaX * 0.2 < deltaY) return -1; // Vertical swipe
+	if (touchendX < touchstartX && deltaX > 5) return 1; // Left swipe
+	if (touchendX > touchstartX && deltaX > 5) return 0; // Right swipe
+
+	return -2; // No significant swipe
+}
+
+document.addEventListener('touchstart', e => {
+	touchstartX = e.changedTouches[0].screenX;
+	touchstartY = e.changedTouches[0].screenY;
+})
+
+document.addEventListener('touchend', e => {
+	touchendX = e.changedTouches[0].screenX;
+	touchendY = e.changedTouches[0].screenY;
+
+	if (checkDirection() == 0) {
+		// tring to go backward
+		window.location.href = '/menu/list/?rf=' + GetParams(window.location.href).d;
+	} else {
+		// trying to go forward
+		// on the view section, can't do anything.
+		return;
+	}
 });
 
 Load();

@@ -1,11 +1,38 @@
+let production = false
+let globe_vector = document.querySelector('.globe_vector');
+let phone_vector = document.querySelector('.phone_vector');
+let body = document.body;
+
+if (production) {
+	globe_vector.src = '/drinkmenu/image_data/globe_vector.png';
+	phone_vector.src = '/drinkmenu/image_data/phone_vector.png';
+	body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('/drinkmenu/media/Mad-Jack-s-Interior-with-TVs_6B4AD80B-5056-A36F-233C860925E98C0C-6b4ad7745056a36_6b4ad86d-5056-a36f-23078ba42eb6533e-min.png')`;
+} else {
+	globe_vector.src = '/image_data/globe_vector.png';
+	phone_vector.src = '/image_data/phone_vector.png';
+	body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('/media/Mad-Jack-s-Interior-with-TVs_6B4AD80B-5056-A36F-233C860925E98C0C-6b4ad7745056a36_6b4ad86d-5056-a36f-23078ba42eb6533e-min.png')`;
+}
+
 let module = {};
 let container = document.querySelector('.container');
+let list = performance.navigation.type == performance.navigation.TYPE_RELOAD ? sessionStorage.getItem('__list.refresh_name') : sessionStorage.getItem('__list.name');
+sessionStorage.setItem('__list.refresh_name', list);
+sessionStorage.setItem('__list.name', '__home');
 
 function Module(Name, Function) {
 	module[Name] = Function;
-	
+
 	return module[Name];
 }
+
+let GetParams = Module('__get_params', function(URL) {
+	const Params = {};
+	URL.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(M, Key, Value) {
+		Params[Key] = decodeURIComponent(Value);
+	});
+
+	return Params;
+});
 
 let New = Module('new', function(Name) {
 	let clone = document.querySelector('.button').cloneNode(true);
@@ -15,14 +42,53 @@ let New = Module('new', function(Name) {
 		sessionStorage.setItem('__list.name', Name);
 		window.location.href = '/menu/list';
 	})
-	
+
 	clone.style.display = 'block';
 	clone.textContent = Name;
 	clone.appendChild(arrow);
 	container.appendChild(clone);
 })
 
+let touchstartX = 0
+let touchendX = 0
+let touchstartY = 0
+let touchendY = 0
+
+function checkDirection() {
+	let deltaX = Math.abs(touchendX - touchstartX);
+	let deltaY = Math.abs(touchendY - touchstartY);
+
+	if (deltaX < deltaY && deltaY > 5 && deltaX * 0.2 < deltaY) return -1; // Vertical swipe
+	if (touchendX < touchstartX && deltaX > 5) return 1; // Left swipe
+	if (touchendX > touchstartX && deltaX > 5) return 0; // Right swipe
+
+	return -2; // No significant swipe
+}
+
+document.addEventListener('touchstart', e => {
+	touchstartX = e.changedTouches[0].screenX;
+	touchstartY = e.changedTouches[0].screenY;
+})
+
+document.addEventListener('touchend', e => {
+	touchendX = e.changedTouches[0].screenX;
+	touchendY = e.changedTouches[0].screenY;
+	if (checkDirection() == 0) {
+		// tring to go backward
+		// on the selection menu, can't do anything to go back.
+		return;
+	} else if (checkDirection() > 0) {
+		// trying to go forward
+		if (list == '__home') return;
+		if (GetParams(window.location.href).rf) {
+			sessionStorage.setItem('__list.name', list);
+			window.location.href = window.location.href = '/menu/list/?rf=' + GetParams(window.location.href).rf;
+		}
+	}
+});
+
 New('Beers');
+New('Tap Beers');
 New('Seltzers');
 New('Shots');
 New('Cocktails');

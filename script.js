@@ -1,3 +1,12 @@
+let production = false;
+let bgimg = document.querySelector('.bg-image');
+
+if (production) {
+	bgimg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('/drinkmenu/media/Mad-Jack-s-Interior-with-TVs_6B4AD80B-5056-A36F-233C860925E98C0C-6b4ad7745056a36_6b4ad86d-5056-a36f-23078ba42eb6533e-min.png')`;
+} else {
+	bgimg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('/media/Mad-Jack-s-Interior-with-TVs_6B4AD80B-5056-A36F-233C860925E98C0C-6b4ad7745056a36_6b4ad86d-5056-a36f-23078ba42eb6533e-min.png')`;
+}
+
 const serverNames = [
 	"Jess",
 	"Brittany",
@@ -56,7 +65,7 @@ setTimeout(() => {
 		localStorage.setItem('__agree.clicked', true);
 		window.location.href = '/menu';
 	});
-}, 7500);
+}, 0);
 
 // THE FUNCTION ABOVE IS IMPORTANT! IT GETS THE SECTION AND TABLE NUMBER AUTOMATICALLY FOR YOU!
 
@@ -64,4 +73,4 @@ const serverName = serverNames[sectionNumber - 2]; // Adjust for zero-based inde
 
 // Use the serverName variable to further customize the experience.
 // serverName !== undefined ? document.getElementById('server').innerHTML = 'your Server is ' + serverName + '.' : document.getElementById('server').innerHTML = 'welcome to Mad Jacks.';
-document.getElementById('greeting').innerHTML = GetGreeting();
+// document.getElementById('greeting').innerHTML = GetGreeting();

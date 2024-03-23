@@ -1,3 +1,12 @@
+let _production = false;
+let notification = document.querySelector('.turnDeviceNotification');
+
+if (_production) {
+	notification.style.backgroundImage = "url('/drinkmenu/media/sValK.png')";
+} else {
+	notification.style.backgroundImage = "url('/media/sValK.png')";
+}
+
 window.addEventListener('orientationchange', function(e) {
 	switch (window.orientation) {
 		case 0:
@@ -11,6 +20,6 @@ document.querySelector('.turnDeviceNotification').style.display = 'none';
 	}
 });
 
-window.o = function() {
+window.BeforeUnloadEvent = function() {
 	console.log('test')
 }
