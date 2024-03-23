@@ -1,10 +1,10 @@
-let production = false
+let production = true;
 
 let module = {};
 let list = sessionStorage.getItem('__list.name') == 'Specialty' ? 'Specialty Drinks' : sessionStorage.getItem('__list.name');
 
 if (list == '__home') {
-	window.location.href = '/menu/';
+	window.location.href = '/drinkmenu/menu/';
 }
 
 let title = document.querySelector('.title');
@@ -183,7 +183,7 @@ let Load = Module('_load', function(Name) {
 
 		if (Item !== 'All Pepsi Products') {
 			clone.addEventListener('click', function() {
-				window.location.href = '/menu/view/?d=' + Encrypt(Item);
+				window.location.href = '/drinkmenu/menu/view/?d=' + Encrypt(Item);
 			})
 		}
 		
@@ -231,12 +231,12 @@ document.addEventListener('touchend', e => {
 
 	if (checkDirection() == 0) {
 		// tring to go backward
-		window.location.href = '/menu/?rf=' + GetParams(window.location.href).rf;
+		window.location.href = '/drinkmenu/menu/?rf=' + GetParams(window.location.href).rf;
 	} else if (checkDirection() > 0) {
 		// trying to go forward
 		// on the list section, go back to the previous menu item selected.
 		if (GetParams(window.location.href).rf) {
-			window.location.href = window.location.href = '/menu/view/?d=' + GetParams(window.location.href).rf;
+			window.location.href = window.location.href = '/drinkmenu/menu/view/?d=' + GetParams(window.location.href).rf;
 		} else {
 			return;
 		}
