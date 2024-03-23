@@ -63,7 +63,7 @@ setTimeout(() => {
 	
 	Button.addEventListener('click', function() {
 		localStorage.setItem('__agree.clicked', true);
-		window.location.href = '/menu';
+		window.location.href = '/drinkmenu/menu';
 	});
 }, 0);
 
