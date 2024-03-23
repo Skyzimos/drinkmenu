@@ -49,7 +49,7 @@ let NewNav = Module('new', function(Name) {
 	sampleCloneA.addEventListener('click', function() {
 		if (!_dlistnav == undefined && Name == _list) return;
 		sessionStorage.setItem('__list.name', Name);
-		window.location.href = '/menu/list';
+		window.location.href = '/drinkmenu/menu/list';
 	})
 
 	sampleClone.classList.remove('sample');
