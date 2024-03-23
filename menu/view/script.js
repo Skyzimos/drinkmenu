@@ -247,7 +247,7 @@ let Decrypt = Module('__decrypt', function(_param) {
 	try {
 		return atob(_param);
 	} catch (_err) {
-		window.location.href = '/menu/';
+		window.location.href = '/drinkmenu/menu/';
 		return console.error(err);
 	}
 });
@@ -257,7 +257,7 @@ let Load = Module('_load', function(Name) {
 	let list_src = list.replace(/\s+/g, '').replace(/[^a-zA-Z0-9 ]/g, '');
 
 	if (list == undefined || list == null || list == '') {
-		window.location.href = '/menu/';
+		window.location.href = '/drinkmenu/menu/';
 		return;
 	}
 
@@ -266,11 +266,11 @@ let Load = Module('_load', function(Name) {
 
 		if (category == 'Cocktails') {
 			container.style.top = '60%';
-			image.src = '/product_images/' + category.toLowerCase() + '/' + list_src + '.png';
+			image.src = '/drinkmenu/product_images/' + category.toLowerCase() + '/' + list_src + '.png';
 		}
 	} else if (category !== 'Wines' && category !== 'Tap Beers') {
 		container.style.top = '60%';
-		image.src = '/product_images/' + category.toLowerCase() + '/' + list_src + '.png';
+		image.src = '/drinkmenu/product_images/' + category.toLowerCase() + '/' + list_src + '.png';
 	}
 
 	subtitle.textContent = list;
@@ -303,7 +303,7 @@ document.addEventListener('touchend', e => {
 
 	if (checkDirection() == 0) {
 		// tring to go backward
-		window.location.href = '/menu/list/?rf=' + GetParams(window.location.href).d;
+		window.location.href = '/drinkmenu/menu/list/?rf=' + GetParams(window.location.href).d;
 	} else {
 		// trying to go forward
 		// on the view section, can't do anything.
