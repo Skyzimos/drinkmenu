@@ -1,4 +1,4 @@
-let production = false;
+let production = true;
 let bgimg = document.querySelector('.bg-image');
 
 if (production) {
