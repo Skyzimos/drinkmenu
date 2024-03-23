@@ -1,4 +1,4 @@
-let _production = false;
+let _production = true;
 let notification = document.querySelector('.turnDeviceNotification');
 
 if (_production) {
