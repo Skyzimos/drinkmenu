@@ -10,7 +10,7 @@ body {
 body {
 	background-color: black;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.75),
-			rgba(0, 0, 0, 0.5)), url('/media/Mad-Jack-s-Interior-with-TVs_6B4AD80B-5056-A36F-233C860925E98C0C-6b4ad7745056a36_6b4ad86d-5056-a36f-23078ba42eb6533e-min.png');
+			rgba(0, 0, 0, 0.5)), url('/drinkmenu/media/Mad-Jack-s-Interior-with-TVs_6B4AD80B-5056-A36F-233C860925E98C0C-6b4ad7745056a36_6b4ad86d-5056-a36f-23078ba42eb6533e-min.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -206,6 +206,6 @@ body {
 
 @font-face {
 	font-family: "main";
-	src: url("/font_data/main.woff2"),
-		url("/font_data/main.woff");
+	src: url("/drinkmenu/font_data/main.woff2"),
+		url("/drinkmenu/font_data/main.woff");
 }
