@@ -206,6 +206,6 @@ body {
 
 @font-face {
 	font-family: "main";
-	src: url("/font_data/main.woff2"),
-		url("/font_data/main.woff");
+	src: url("/drinkmenu/font_data/main.woff2"),
+		url("/drinkmenu/font_data/main.woff");
 }
