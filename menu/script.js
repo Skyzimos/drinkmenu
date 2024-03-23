@@ -1,4 +1,4 @@
-let production = false
+let production = true
 let globe_vector = document.querySelector('.globe_vector');
 let phone_vector = document.querySelector('.phone_vector');
 let body = document.body;
@@ -40,7 +40,7 @@ let New = Module('new', function(Name) {
 
 	clone.addEventListener('click', function() {
 		sessionStorage.setItem('__list.name', Name);
-		window.location.href = '/menu/list';
+		window.location.href = '/drinkmenu/menu/list';
 	})
 
 	clone.style.display = 'block';
@@ -82,7 +82,7 @@ document.addEventListener('touchend', e => {
 		if (list == '__home') return;
 		if (GetParams(window.location.href).rf) {
 			sessionStorage.setItem('__list.name', list);
-			window.location.href = window.location.href = '/menu/list/?rf=' + GetParams(window.location.href).rf;
+			window.location.href = window.location.href = '/drinkmenu/menu/list/?rf=' + GetParams(window.location.href).rf;
 		}
 	}
 });
