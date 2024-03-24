@@ -92,7 +92,6 @@ let list_data = {
 			'Southern Hospitality',
 			'Orange Peel',
 			'Jack Apple Sour',
-			'Liquid Marijuana',
 		]
 	},
 	['Cocktails']: {
