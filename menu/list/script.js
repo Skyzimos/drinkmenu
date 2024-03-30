@@ -103,7 +103,7 @@ let list_data = {
 			'Tokyo Tea',
 			'Bahama Mama',
 			'Jackup Punch', // need pic
-			'MAI TAI', // need pic
+			'Mai Tai', // need pic
 			'Sex on the Beach',
 			'Colorado Bulldog', // need pic
 			'Fruit Roll Up', // on phone
@@ -117,12 +117,18 @@ let list_data = {
 			'Tequila Sunrise', // on phone
 			'Iron Butterfly', // need pic
 			'Black Russian', // need pic (make first, then make iron butterfly)
+			'Salty Dog',
 		]
 	},
 	['Martinis']: {
 		subtitle: 'Shaken, not stirred.',
 		drinks: [
-			
+			'Apple-tini',
+			'Cosmopolitan',
+			'Dirty Martini',
+			'Choco-tini',
+			'Lemon-drop Martini',
+			'Strawberry Lemon-drop Martini'
 		]
 	},
 	['Wines']: {
@@ -136,6 +142,84 @@ let list_data = {
 			'Sauvignon Blanc (Sutter Home)',
 			'Cabernet Sauvignon‎ ‎ ‎ ‎(Sycamore Lane)'
 		]
+	},
+	['Liquors']: {
+		subtitle: 'Liquor before beer, you\'re in the clear.',
+		drinks: [
+			'__VODKAS',
+			'Philips',
+			'Tito\'s',
+			'Stoli',
+			'Svedka',
+			'Smirnoff',
+			'Grey Goose',
+			'Ketel One',
+			'Vanilla Smirnoff',
+			'Raspberry Smirnoff',
+			'Citrus Smirnoff',
+			'Blue Raspberry Stoli',
+			'Peppar',
+			'Ciroc',
+			
+			'__GIN',
+			'Philips',
+			'Tanqueray',
+			'Sapphire',
+			'Hendrick\'s',
+
+			'__TEQUILA',
+			'Philips',
+			'Jose Cuervo',
+			'1800',
+			'Don Julio Blanco',
+			'Patron Blanco',
+			'Casamigos Blanco',
+			'Casamigos Reposado',
+
+			'__RUM',
+			'Philips',
+			'Captain Morgan',
+			'Bacardi',
+			'Bacardi Limon',
+			'Bacardi Razz',
+			'Cruzan Coconut',
+			'Myers\'s Dark',
+
+			'__WHISKEY',
+			'Philips',
+			'Jameson',
+			'Jack Daniel\'s',
+			'Jack Fire',
+			'Seagram\'s 7',
+			'Skrewball',
+			'Jim Beam',
+			'Windsor',
+			'Southern Comfort',
+			'Crown',
+			'Crown Apple',
+			'Yukon Jack',
+			'Maker\'s Mark',
+			'Seagram\'s VO',
+			'Canadian Club',
+			'Wild Turkey',
+
+			'__BOURBON',
+			'Bulleit',
+			'Bulleit Rye',
+
+			'__COGNAC',
+			'Hennessy',
+
+			'__BRANDY',
+			'Philips',
+			'Christian Brothers',
+			'E&J',
+
+			'__SCOTCH',
+			'Johnnie Walker Black',
+			'Johnnie Walker Red',
+			'Glenlivet',
+			],
 	},
 	['Non-Alcoholic']: {
 		subtitle: 'All of the taste, none of the tease.', // all of the taste, none of the tease, for those who want to get home in one piece

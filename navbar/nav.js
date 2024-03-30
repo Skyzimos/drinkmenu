@@ -14,10 +14,12 @@ HamburgerIcon.addEventListener('click', function () {
 		Menu.classList.add('active');
 		Menu.style.left = '0%';
 		topbar.style.position = 'fixed';
+		document.body.style.overflow = 'hidden';
 	} else {
 		Menu.classList.remove('active');
 		Menu.style.left = '100%';
 		topbar.style.position = 'absolute';
+		document.body.style.overflow = 'visible';
 	}
 });
 
@@ -64,6 +66,7 @@ NewNav('Tap Beers');
 NewNav('Seltzers');
 NewNav('Shots');
 NewNav('Cocktails');
-// NewNav('Martinis');
+NewNav('Martinis');
 NewNav('Wines');
+NewNav('Liquors');
 NewNav('Non-Alcoholic');

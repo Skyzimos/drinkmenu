@@ -92,6 +92,7 @@ New('Tap Beers');
 New('Seltzers');
 New('Shots');
 New('Cocktails');
-// New('Martinis');
+New('Martinis');
 New('Wines');
+New('Liquors');
 New('Non-Alcoholic');

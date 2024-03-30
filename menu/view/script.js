@@ -76,9 +76,6 @@ let list_data = {
 			'Apple Sauce Cocktail': {
 				description: 'Fireball, Apple Schnapps, Pineapple.'
 			},
-			'Salty Dog': {
-				description: 'Vodka, Grapefruit.'
-			},
 			'Green Tea': {
 				description: 'Jameson, Peach, Sour, Lemonade.'
 			},
@@ -144,7 +141,7 @@ let list_data = {
 			'Jackup Punch': {
 				description: 'Captain, Orange Juice, Pineapple, Starry, Grenadine, Cream.'
 			},
-			'MAI TAI': {
+			'Mai Tai': {
 				description: 'Malibu, Pineapple, Orange Juice, Grenadine, Myers Rum.'
 			},
 			'Sex on the Beach': {
@@ -191,14 +188,34 @@ let list_data = {
 			},
 			'Black Russian': {
 				description: 'Vodka, Kahlua.'
-			}
+			},
+			'Salty Dog': {
+				description: 'Vodka, Grapefruit.'
+			},
 		}
 	},
 	['Martinis']: {
 		subtitle: 'Shaken, not stirred.',
-		drinks: [
-			''
-		]
+		drinks: {
+			'Apple-tini': {
+				description: 'Vodka, Apple Pucker.'
+			},
+			'Cosmopolitan': {
+				description: 'Vodka, Triple Sec, Cranberry.'
+			},
+			'Dirty Martini': {
+				description: 'Vodka, Olive Juice.'
+			},
+			'Choco-tini': {
+				description: 'Vanilla Vodka, Chocolate, Kahlua, Bailey\'s, Cream.'
+			},
+			'Lemon-drop Martini': {
+				description: 'Citrus Vodka, Sour, Splash of Lemonade.'
+			},
+			'Strawberry Lemon-drop Martini': {
+				description: 'Citrus Vodka, Sour, Splash of Lemonade, Strawberry Puree.'
+			},
+		}
 	},
 	['Wines']: {
 		subtitle: '"Words so fancy you probably can\'t even say them."',
@@ -261,10 +278,10 @@ let Load = Module('_load', function(Name) {
 		return;
 	}
 
-	if (category == 'Shots' || category == 'Cocktails') {
+	if (category == 'Shots' || category == 'Cocktails' || category == 'Martinis') {
 		description.textContent = list_data[category].drinks[list].description;
 
-		if (category == 'Cocktails') {
+		if (category == 'Cocktails' || category == 'Martinis') {
 			container.style.top = '60%';
 			image.src = '/product_images/' + category.toLowerCase() + '/' + list_src + '.png';
 		}
