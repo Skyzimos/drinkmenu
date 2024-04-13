@@ -42,6 +42,7 @@ let New = Module('new', function(Name) {
 
 	clone.addEventListener('click', function() {
 		sessionStorage.setItem('__list.name', Name);
+		localStorage.setItem('__list.refresh_name', Name)
 		if (production) {
 			window.location.href = '/drinkmenu/menu/list';
 		} else {
