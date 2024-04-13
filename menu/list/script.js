@@ -14,6 +14,7 @@ if (list == '__home') {
 let title = document.querySelector('.title');
 let subtitle = document.querySelector('.subtitle');
 let container = document.querySelector('.container');
+let body = document.body;
 
 if (production) {
 	//document.querySelector('.devicejs').src = '/drinkmenu/device/rotation.js';
