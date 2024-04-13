@@ -8,6 +8,7 @@ let image = document.querySelector('.product-image');
 let container = document.querySelector('.container');
 let description = document.querySelector('.product-description');
 let category = !sessionStorage.getItem('__list.name') ? localStorage.getItem('__list.refresh_name') : sessionStorage.getItem('__list.name');
+let body = document.body;
 
 if (production) {
 	//document.querySelector('.devicejs').src = '/drinkmenu/device/rotation.js';
