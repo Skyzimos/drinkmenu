@@ -4,8 +4,8 @@ let body = document.body;
 if (production) {
 	//document.querySelector('.devicejs').src = '/drinkmenu/device/rotation.js';
 	//document.querySelector('.navbarjs').src = '/drinkmenu/navbar/nav.js';
-		document.querySelector('.globe_vector').src = '/drinkmenu/image_data/star_vector.png';
-		document.querySelector('.phone_vector').src = '/drinkmenu/image_data/phone_vector.png';
+		//document.querySelector('.globe_vector').src = '/drinkmenu/image_data/star_vector.png';
+		//document.querySelector('.phone_vector').src = '/drinkmenu/image_data/phone_vector.png';
 	body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('/drinkmenu/media/Mad-Jack-s-Interior-with-TVs_6B4AD80B-5056-A36F-233C860925E98C0C-6b4ad7745056a36_6b4ad86d-5056-a36f-23078ba42eb6533e-min.png')`;
 } else {
 	//document.querySelector('.devicejs').src = '/device/rotation.js';
