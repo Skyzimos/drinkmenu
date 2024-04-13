@@ -1,3 +1,5 @@
+let __production = true;
+
 let navmodule = {};
 let _list = sessionStorage.getItem('__list.name') == 'Specialty' ? 'Specialty Drinks' : sessionStorage.getItem('__list.name');
 
@@ -5,7 +7,6 @@ const HamburgerIcon = document.getElementById('burger');
 let topbar = document.querySelector('.topbar-rightcontent');
 let dynamicContainer = document.querySelector('.dynamic');
 let sample = document.querySelector('.sample');
-let sampleA = document.querySelector('.a');
 
 HamburgerIcon.addEventListener('click', function () {
 	const Menu = document.getElementById('hamburger-menu');
@@ -14,17 +15,17 @@ HamburgerIcon.addEventListener('click', function () {
 		Menu.classList.add('active');
 		Menu.style.left = '0%';
 		topbar.style.position = 'fixed';
-		document.body.style.overflow = 'hidden';
+		document.body.classList.add('disable-scroll');
 	} else {
 		Menu.classList.remove('active');
 		Menu.style.left = '100%';
 		topbar.style.position = 'absolute';
-		document.body.style.overflow = 'visible';
+		document.body.classList.remove('disable-scroll');
 	}
 });
 
 function Module(Name, Function) {
-		navmodule[Name] = Function;
+	navmodule[Name] = Function;
 	return navmodule[Name];
 }
 
@@ -39,7 +40,7 @@ let GetParamsNav = Module('__get_params', function(URL) {
 
 let NewNav = Module('new', function(Name) {
 	let sampleClone = sample.cloneNode(true);
-	let sampleCloneA = sampleA.cloneNode(true);
+	let sampleCloneA = sampleClone.querySelector('.a');
 	let br = document.createElement('br');
 
 	if (Name == _list && _list !== '__home') {
@@ -47,11 +48,15 @@ let NewNav = Module('new', function(Name) {
 	}
 
 	let _dlistnav = GetParamsNav(window.location.href).d;
-	
+
 	sampleCloneA.addEventListener('click', function() {
 		if (!_dlistnav == undefined && Name == _list) return;
 		sessionStorage.setItem('__list.name', Name);
-		window.location.href = '/menu/list';
+		if (__production) {
+			window.location.href = '/drinkmenu/menu/list';
+		} else {
+			window.location.href = '/menu/list';
+		}
 	})
 
 	sampleClone.classList.remove('sample');

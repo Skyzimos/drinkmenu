@@ -1,15 +1,33 @@
+let production = true
+
 let module = {};
-let list = sessionStorage.getItem('__list.name') == 'Specialty' ? 'Specialty Drinks' : sessionStorage.getItem('__list.name');
+let list = !sessionStorage.getItem('__list.name') ? localStorage.getItem('__list.refresh_name') : sessionStorage.getItem('__list.name');
 
 let subtitle = document.querySelector('.subtitle');
 let image = document.querySelector('.product-image');
 let container = document.querySelector('.container');
 let description = document.querySelector('.product-description');
-let category = sessionStorage.getItem('__list.name');
+let category = !sessionStorage.getItem('__list.name') ? localStorage.getItem('__list.refresh_name') : sessionStorage.getItem('__list.name');
+
+if (production) {
+	//document.querySelector('.devicejs').src = '/drinkmenu/device/rotation.js';
+	//document.querySelector('.navbarjs').src = '/drinkmenu/navbar/nav.js';
+		document.querySelector('.globe_vector').src = '/drinkmenu/image_data/star_vector.png';
+		document.querySelector('.phone_vector').src = '/drinkmenu/image_data/phone_vector.png';
+	body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('/drinkmenu/media/Mad-Jack-s-Interior-with-TVs_6B4AD80B-5056-A36F-233C860925E98C0C-6b4ad7745056a36_6b4ad86d-5056-a36f-23078ba42eb6533e-min.png')`;
+} else {
+	//document.querySelector('.devicejs').src = '/device/rotation.js';
+	//document.querySelector('.navbarjs').src = '/navbar/nav.js';
+		document.querySelector('.globe_vector').src = '/image_data/star_vector.png';
+		document.querySelector('.phone_vector').src = '/image_data/phone_vector.png';
+	body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url('/media/Mad-Jack-s-Interior-with-TVs_6B4AD80B-5056-A36F-233C860925E98C0C-6b4ad7745056a36_6b4ad86d-5056-a36f-23078ba42eb6533e-min.png')`;
+}
 
 let list_data = {
 	['Beers']: {
 		subtitle: "It's 5 o'clock somewhere!",
+		extra_data: false,
+		clickable: true,
 		drinks: [
 			'Heineken',
 			'Coors Light',
@@ -23,13 +41,15 @@ let list_data = {
 			'Modelo',
 			'Bud Light',
 			'Budweiser',
-			'Mwiller High Life',
+			'Miller High Life',
 			'Stella Artois',
 			'Bud Light Lime',
 		]
 	},
 	['Tap Beers']: {
 		subtitle: '-',
+		extra_data: false,
+		clickable: false,
 		drinks: [
 			'Coors Light',
 			'Miller Lite',
@@ -53,6 +73,8 @@ let list_data = {
 	},
 	['Seltzers']: {
 		subtitle: '-',
+		extra_data: false,
+		clickable: true,
 		drinks: [
 			'White Claw (Black Cherry)',
 			'White Claw (Raspberry)',
@@ -63,6 +85,8 @@ let list_data = {
 	},
 	['Shots']: {
 		subtitle: 'SHOTS! SHOTS! SHOTS!',
+		extra_data: true,
+		clickable: true,
 		drinks: {
 			'Lemon Drop': {
 				description: 'Smirnoff Citrus, Sour, Lemonade.'
@@ -120,11 +144,13 @@ let list_data = {
 			},
 			'F***ing Awesome': {
 				description: 'Captain, Soco, Malibu, Peach, Amaretto, Apple, Grape, Pineapple, Orange Juice, Sour, Cranberry.'
-			}
+			},
 		}
 	},
 	['Cocktails']: {
 		subtitle: '-',
+		extra_data: true,
+		clickable: true,
 		drinks: {
 			'Long Island Tea': {
 				description: 'Vodka, Rum, Gin, Triple Sec, Sour, Pepsi.'
@@ -196,6 +222,8 @@ let list_data = {
 	},
 	['Martinis']: {
 		subtitle: 'Shaken, not stirred.',
+		extra_data: true,
+		clickable: true,
 		drinks: {
 			'Apple-tini': {
 				description: 'Vodka, Apple Pucker.'
@@ -219,6 +247,8 @@ let list_data = {
 	},
 	['Wines']: {
 		subtitle: '"Words so fancy you probably can\'t even say them."',
+		extra_data: false,
+		clickable: true,
 		drinks: [
 			'Red Blend (Ménage à Trois)',
 			'Merlot (Barone Fini)',
@@ -229,8 +259,90 @@ let list_data = {
 			'Cabernet Sauvignon‎ ‎ ‎ ‎(Sycamore Lane)'
 		]
 	},
+	['Liquors']: {
+		subtitle: `We just might have what you want.`,
+		extra_data: false,
+		clickable: false,
+		drinks: [
+			'__Vodkas',
+			'Philips',
+			'Tito\'s',
+			'Stoli',
+			'Svedka',
+			'Smirnoff',
+			'Grey Goose',
+			'Ketel One',
+			'Vanilla Smirnoff',
+			'Raspberry Smirnoff',
+			'Citrus Smirnoff',
+			'Blue Raspberry Stoli',
+			'Peppar',
+			'Ciroc',
+
+			'__Gin',
+			'Philips',
+			'Tanqueray',
+			'Sapphire',
+			'Hendrick\'s',
+
+			'__Tequila',
+			'Philips',
+			'Jose Cuervo',
+			'1800',
+			'Don Julio Blanco',
+			'Patron Blanco',
+			'Casamigos Blanco',
+			'Casamigos Reposado',
+
+			'__Rum',
+			'Philips',
+			'Captain Morgan',
+			'Bacardi',
+			'Bacardi Limon',
+			'Bacardi Razz',
+			'Cruzan Coconut',
+			'Myers\'s Dark',
+
+			'__Whiskey',
+			'Philips',
+			'Jameson',
+			'Jack Daniel\'s',
+			'Jack Fire',
+			'Seagram\'s 7',
+			'Skrewball',
+			'Jim Beam',
+			'Windsor',
+			'Southern Comfort',
+			'Crown',
+			'Crown Apple',
+			'Yukon Jack',
+			'Maker\'s Mark',
+			'Seagram\'s VO',
+			'Canadian Club',
+			'Wild Turkey',
+
+			'__Bourbon',
+			'Bulleit',
+			'Bulleit Rye',
+
+			'__Cognac',
+			'Hennessy',
+
+			'__Brandy',
+			'Philips',
+			'Christian Brothers',
+			'E&J',
+
+			'__Scotch',
+			'Johnnie Walker Black',
+			'Johnnie Walker Red',
+			'Glenlivet',
+			],
+	},
 	['Non-Alcoholic']: {
 		subtitle: 'All of the taste, none of the tease.', // all of the taste, none of the tease, for those who want to get home in one piece
+		extra_data: false,
+		clickable: true,
 		drinks: [
 			'Heineken 0.0%',
 			'Red Bull',
@@ -241,7 +353,7 @@ let list_data = {
 			'Cranberry Juice',
 			'Pineapple Juice',
 			'Grapefruit Juice',
-			'All Pepsi Products',
+			'Pepsi Products'
 		]
 	}
 };
@@ -264,30 +376,55 @@ let Decrypt = Module('__decrypt', function(_param) {
 	try {
 		return atob(_param);
 	} catch (_err) {
-		window.location.href = '/menu/';
+		if (production) {
+			window.location.href = '/drinkmenu/menu/';
+		} else {
+			window.location.href = '/menu/';
+		}
 		return console.error(err);
 	}
 });
 
 let Load = Module('_load', function(Name) {
 	let list = Decrypt(GetParams(window.location.href).d);
-	let list_src = list.replace(/\s+/g, '').replace(/[^a-zA-Z0-9 ]/g, '');
+	let list_src = list !== 'Cabernet Sauvignon (Sycamore Lane)' ? list.replace(/\s+/g, '').replace(/[^a-zA-Z0-9 ]/g, '') : 'Cabernet Sauvignon‎ ‎ ‎ ‎(Sycamore Lane)'.replace(/\s+/g, '').replace(/[^a-zA-Z0-9 ]/g, '');
 
 	if (list == undefined || list == null || list == '') {
-		window.location.href = '/menu/';
+		if (production) {
+			window.location.href = '/drinkmenu/menu/?rf=';
+		} else {
+			window.location.href = '/menu/';
+		}
 		return;
 	}
 
-	if (category == 'Shots' || category == 'Cocktails' || category == 'Martinis') {
-		description.textContent = list_data[category].drinks[list].description;
+	if (list_data[category].extra_data) {
+		document.querySelector('.view-liquors').style.display = 'block';
 
-		if (category == 'Cocktails' || category == 'Martinis') {
-			container.style.top = '60%';
-			image.src = '/product_images/' + category.toLowerCase() + '/' + list_src + '.png';
+		if (production) {
+			document.querySelector('.link').onclick = function() {
+				location.href = '/drinkmenu/menu/list/';
+				sessionStorage.setItem('__list.name', 'Liquors');
+				localStorage.setItem('__list.name', 'Liquors');
+			}
+		} else {
+			document.querySelector('.link').onclick = function() {
+				location.href = '/menu/list/';
+				sessionStorage.setItem('__list.name', 'Liquors');
+				localStorage.setItem('__list.name', 'Liquors');
+			}
 		}
-	} else if (category !== 'Wines' && category !== 'Tap Beers') {
-		container.style.top = '60%';
-		image.src = '/product_images/' + category.toLowerCase() + '/' + list_src + '.png';
+	}
+
+	if (!Array.isArray(list_data[category].drinks)) {
+		description.textContent = list_data[category].drinks[list].description;
+		container.style.transform = 'translate(-50%, -55%)';
+	} else {
+		container.style.transform = 'translate(-50%, -45%)';
+	}
+
+	if (category !== 'Tap Beers' && category !== 'Shots' && category !== 'Liquors') {
+		image.src = production == false ? '/product_images/' + category.toLowerCase() + '/' + list_src + '.png' : '/drinkmenu/product_images/' + category.toLowerCase() + '/' + list_src + '.png';
 	}
 
 	subtitle.textContent = list;
@@ -302,25 +439,50 @@ function checkDirection() {
 	let deltaX = Math.abs(touchendX - touchstartX);
 	let deltaY = Math.abs(touchendY - touchstartY);
 
-	if (deltaX < deltaY && deltaY > 5 && deltaX * 0.2 < deltaY) return -1; // Vertical swipe
+	if (deltaX < deltaY && deltaY > 5 && deltaX * 0.2 < (deltaY * 2)) return -1; // Vertical swipe
 	if (touchendX < touchstartX && deltaX > 5) return 1; // Left swipe
 	if (touchendX > touchstartX && deltaX > 5) return 0; // Right swipe
 
 	return -2; // No significant swipe
 }
 
+function start() {
+	startTime = new Date();
+};
+
+function end() {
+	endTime = new Date();
+	var timeDiff = endTime - startTime; //in ms
+	// strip the ms
+	timeDiff /= 1000;
+
+	// get seconds 
+	var seconds = timeDiff;
+	return seconds;
+}
+
 document.addEventListener('touchstart', e => {
+	start();
 	touchstartX = e.changedTouches[0].screenX;
 	touchstartY = e.changedTouches[0].screenY;
 })
 
 document.addEventListener('touchend', e => {
+	let e_t = end()
 	touchendX = e.changedTouches[0].screenX;
 	touchendY = e.changedTouches[0].screenY;
 
+	let deltaX = Math.abs(touchendX - touchstartX);
+	let deltaY = Math.abs(touchendY - touchstartY);
+	
+	if (e_t >= 0.05 && deltaX < deltaY * 3 && checkDirection() == 0) return;
 	if (checkDirection() == 0) {
 		// tring to go backward
-		window.location.href = '/menu/list/?rf=' + GetParams(window.location.href).d;
+		if (production) {
+			window.location.href = '/drinkmenu/menu/list/?rf=' + GetParams(window.location.href).d;
+		} else {
+			window.location.href = '/menu/list/?rf=' + GetParams(window.location.href).d;
+		}
 	} else {
 		// trying to go forward
 		// on the view section, can't do anything.

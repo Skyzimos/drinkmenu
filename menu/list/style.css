@@ -42,9 +42,14 @@ body {
 
 	color: var(--cocktails-text-color);
 	font-family: "main";
-	font-size: 10vw;
+	font-size: clamp(2.5rem, 8vw, 3.5rem);
 	font-weight: 500;
 	text-transform: uppercase;
+}
+
+:is(.title.title-rotate) {
+	top: 1.5%;
+	font-size: clamp(2rem, 8vh, 3rem);
 }
 
 :is(.break) {
@@ -69,8 +74,14 @@ body {
 
 	color: var(--beers-text-color);
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 5vw;
+	font-size: clamp(1.5rem, 5vw, 2rem);
 	font-weight: 600;
+	text-transform: uppercase;
+}
+
+:is(.subtitle.subtitle-rotate) {
+	top: 15.5%;
+	font-size: clamp(0.5rem, 5vh, 1rem);
 }
 
 :is(.phone_vector) {
@@ -128,8 +139,11 @@ body {
 	top: 30%;
 	left: 5%;
 
-	&> :is(.button) {
-
+	& > :is(.no-click) {
+		cursor: default;
+	}
+	
+	& > :is(.button) {
 		display: none;
 		width: calc(100%);
 		height: 45px;
@@ -157,6 +171,27 @@ body {
 			transform: rotate(-90deg);
 			transition: all 0.5s;
 		}
+	}
+
+	& > :is(.subsection) {
+		display: none;
+		width: calc(100%);
+		height: 45px;
+		background: transparent;
+		border: none;
+		position: relative;
+
+		padding-top: 40px;
+		padding-bottom: 50px;
+
+		color: var(--ten-color);
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-size: 2em;
+		font-weight: 600;
+		text-decoration: none;
+		text-align: left;
+
+		animation: glow_subsections 0.75s ease-in-out infinite alternate;
 	}
 }
 
@@ -202,10 +237,20 @@ body {
 	}
 }
 
+@keyframes glow_subsections {
+	from {
+		text-shadow: 0 0 1.5px rgba(255, 233, 51, 0.6), 0 0 3px rgba(255, 233, 51, 0.6), 0 0 6px rgba(255, 233, 51, 0.6);
+	}
+
+	to {
+		text-shadow: 0 0 3px rgba(255, 233, 51, 0.6), 0 0 6px rgba(255, 233, 51, 0.6), 0 0 12px rgba(255, 233, 51, 0.6);
+	}
+}
+
 /* FONT FACES */
 
 @font-face {
 	font-family: "main";
-	src: url("/font_data/main.woff2"),
-		url("/font_data/main.woff");
+	src: url("/drinkmenu/font_data/main.woff2"),
+		url("/drinkmenu/font_data/main.woff");
 }

@@ -42,9 +42,14 @@ body {
 
 	color: var(--cocktails-text-color);
 	font-family: "main";
-	font-size: 10vw;
+	font-size: clamp(2.5rem, 8vw, 3.5rem);
 	font-weight: 500;
 	text-transform: uppercase;
+}
+
+:is(.title.title-rotate) {
+	top: 1.5%;
+	font-size: clamp(2rem, 8vh, 3rem);
 }
 
 :is(.break) {
@@ -69,9 +74,14 @@ body {
 
 	color: var(--beers-text-color);
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 5vw;
+	font-size: clamp(1.5rem, 5vw, 2rem);
 	font-weight: 600;
 	text-transform: uppercase;
+}
+
+:is(.subtitle.subtitle-rotate) {
+	top: 15.5%;
+	font-size: clamp(0.5rem, 5vh, 1rem);
 }
 
 :is(.phone_vector) {
@@ -125,19 +135,19 @@ body {
 	left: 50%;
 	top: 55%;
 	aspect-ratio: 1 / 1;
-	width: 85%;
-	max-width: 400px;
+	width: 100%;
+	max-width: 60vh;
 
-	border: var(--ten-color) solid 1px;
-	border-radius: 10px;
+	/*border: var(--ten-color) solid 1px;
+	border-radius: 10px;*/
 
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -60%);
 	
 	& > :is(.product-image) {
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		height: 90%;
+		height: 85%;
 
 		pointer-events: none;
 		transform: translate(-50%, -50%);
@@ -146,15 +156,37 @@ body {
 
 :is(.product-description) {
 	color: white;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-	font-size: 4vw;
-	font-weight: 600;
-	text-align: center;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-weight: 400;
+	font-size: clamp(1.5rem, 5vw, 2rem);
+	text-align: left;
 
-	width: 100%;
+	width: 90%;
 	position: absolute;
-	left: 50%;
-	top: 90%;
+	left: 55%;
+	top: 85%;
+	transform: translate(-50%, -50%);
+}
+
+:is(.view-liquors) {
+	display: none;
+	color: var(--thirty-color);
+	font-family: "main";
+	font-size: clamp(0.5rem, 5vw, 1rem);
+	font-weight: 300;
+	text-align: left;
+	text-decoration: underline;
+	text-transform: uppercase;
+	cursor: pointer;
+
+	-webkit-animation: glow 0.75s ease-in-out infinite alternate;
+	-moz-animation: glow 0.75s ease-in-out infinite alternate;
+	animation: glow 0.75s ease-in-out infinite alternate;
+
+	width: 90%;
+	position: absolute;
+	left: 55%;
+	top: 95%;
 	transform: translate(-50%, -50%);
 }
 
@@ -194,6 +226,6 @@ body {
 
 @font-face {
 	font-family: "main";
-	src: url("/font_data/main.woff2"),
-		url("/font_data/main.woff");
+	src: url("/drinkmenu/font_data/main.woff2"),
+		url("/drinkmenu/font_data/main.woff");
 }

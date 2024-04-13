@@ -1,4 +1,4 @@
-let production = false;
+let production = true;
 let bgimg = document.querySelector('.bg-image');
 
 if (production) {
@@ -63,7 +63,11 @@ setTimeout(() => {
 	
 	Button.addEventListener('click', function() {
 		localStorage.setItem('__agree.clicked', true);
-		window.location.href = '/menu';
+		if (production) {
+			window.location.href = '/drinkmenu/menu/';
+		} else {
+			window.location.href = '/menu';
+		}
 	});
 }, 0);
 
