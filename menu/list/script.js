@@ -61,7 +61,7 @@ let list_data = {
 			'Warpigs Foggy Geezer',
 			'Alaskan Amber',
 			'Michelob Golden Light',
-			'Sam Adams Cold Snap',
+			'Hazy Little Thing',
 			'Pacifico',
 			'Surly Furious',
 			'Shiner Bock',
