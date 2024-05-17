@@ -59,7 +59,7 @@ let list_data = {
 			'Downeast Strawberry',
 			'Blue Moon',
 			'Warpigs Foggy Geezer',
-			'Alaskan Amber',
+			'Floyds Turbo Reaper',
 			'Michelob Golden Light',
 			'Hazy Little Thing',
 			'Pacifico',
