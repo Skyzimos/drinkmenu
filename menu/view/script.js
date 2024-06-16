@@ -58,12 +58,12 @@ let list_data = {
 			'Floyds Turbo Reaper',
 			'Michelob Golden Light',
 			'Hazy Little Thing',
-			'Pacifico',
+			'Utepils Ewald the Golden',
 			'Surly Furious',
 			'Shiner Bock',
 			'Twisted Tea',
 			'Summit EPA',
-			'Honeyweiss',
+			'Summer Shandy',
 			'Liftbridge Mango Blonde',
 			'Angry Orchard'
 		]
