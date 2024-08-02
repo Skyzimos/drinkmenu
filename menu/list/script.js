@@ -59,7 +59,6 @@ let list_data = {
 			'Downeast Strawberry',
 			'Blue Moon',
 			'Warpigs Foggy Geezer',
-			'Floyds Turbo Reaper',
 			'Michelob Golden Light',
 			'Hazy Little Thing',
 			'Utepils Ewald the Golden',
@@ -69,7 +68,8 @@ let list_data = {
 			'Summit EPA',
 			'Summer Shandy',
 			'Liftbridge Mango Blonde',
-			'Angry Orchard'
+			'Lupulin Fashion Mullet IPA',
+			'Loon Juice'
 		]
 	},
 	['Seltzers']: {
