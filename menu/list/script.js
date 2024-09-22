@@ -64,12 +64,13 @@ let list_data = {
 			'Sam Adams Octoberfest',
 			'Surly Furious',
 			'Shiner Bock',
-			'Twisted Tea',
 			'Summit EPA',
 			'Summer Shandy',
 			'Liftbridge Mango Blonde',
 			'Lupulin Fashion Mullet IPA',
 			'Loon Juice'
+			'Utepils Skölsch',
+			'Kona Big Wave'
 		]
 	},
 	['Seltzers']: {
