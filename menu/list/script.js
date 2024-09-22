@@ -68,7 +68,7 @@ let list_data = {
 			'Summer Shandy',
 			'Liftbridge Mango Blonde',
 			'Lupulin Fashion Mullet IPA',
-			'Loon Juice'
+			'Loon Juice',
 			'Utepils Skölsch',
 			'Kona Big Wave',
 		]
