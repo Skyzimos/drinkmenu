@@ -70,7 +70,7 @@ let list_data = {
 			'Lupulin Fashion Mullet IPA',
 			'Loon Juice'
 			'Utepils Skölsch',
-			'Kona Big Wave'
+			'Kona Big Wave',
 		]
 	},
 	['Seltzers']: {
