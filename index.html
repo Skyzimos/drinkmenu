@@ -13,8 +13,9 @@
 <body>
 	<div class='overlay'></div>
 	<div class="turnDeviceNotification"></div>
+	<script src='/scripts/data.js'></script>
 	<script defer type='module'>
-		let ___production = true;
+		let ___production = window.__shared_data._production;
 		if (___production) {
 			window.location.href = '/drinkmenu/menu/';
 		} else {
