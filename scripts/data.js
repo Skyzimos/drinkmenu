@@ -132,7 +132,7 @@ window.__shared_data = {
             drinks: [
                 '__Red Wines',
                 'Merlot (Barone Fini)',
-                'Red Blend (Ménage à Trois)',
+                'Red Blend (Ménage à Trois)',   
                 'Cabernet Sauvignon‎ ‎ ‎ ‎(Sycamore Lane)',
     
                 '__White Wines',
@@ -246,3 +246,5 @@ window.__shared_data = {
         }
     }
 }
+
+console.log(window.__shared_data)
