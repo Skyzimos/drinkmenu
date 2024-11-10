@@ -334,7 +334,6 @@ const event = new CustomEvent('__share_data', {
 			'Pepsi Products'
 		]
 	}
-}
     }
 });
 
