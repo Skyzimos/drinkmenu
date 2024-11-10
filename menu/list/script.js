@@ -5,6 +5,8 @@ document.addEventListener('__share_data', (__shared_data) => {
 	let module = {};
 let list = !sessionStorage.getItem('__list.name') ? localStorage.getItem('__list.refresh_name') : sessionStorage.getItem('__list.name');
 
+	console.log(list_data, list_data[list], list_data[list].drinks)
+	
 if (list == '__home') {
 	if (production) {
 		window.location.href = '/drinkmenu/menu/';
