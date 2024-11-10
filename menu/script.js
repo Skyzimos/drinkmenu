@@ -1,7 +1,8 @@
-let production = true
-let body = document.body;
+document.addEventListener('__share_data', (__shared_data) => {
+	let production = __shared_data.detail._production;
+	let body = document.body;
 
-if (production) {
+	if (production) {
 	//document.querySelector('.devicejs').src = '/drinkmenu/device/rotation.js';
 	//document.querySelector('.navbarjs').src = '/drinkmenu/navbar/nav.js';
 		document.querySelector('.globe_vector').src = '/drinkmenu/image_data/star_vector.png';
@@ -136,3 +137,4 @@ New('Martinis');
 New('Wines');
 New('Liquors');
 New('Non-Alcoholic');
+});
