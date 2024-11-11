@@ -60,12 +60,12 @@ let Load = Module('_load', function(Name) {
 	}
 
 	if (Sort) {
-		list_data[Name].drinks.sort();
+		Object.keys(list_data[Name].drinks).sort();
 	};
 	
 	subtitle.textContent = list_data[Name].subtitle;
 	
-	list_data[Name].drinks.forEach(Item => {
+	Object.keys(list_data[Name].drinks).forEach(Item => {
 		if (Item.includes('__')) {
 			let name = Item.replace('__', '');
 			let clone = document.querySelector('.subsection').cloneNode(true);
