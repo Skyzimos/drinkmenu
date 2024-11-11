@@ -52,7 +52,7 @@ let Load = Module('_load', function(Name) {
 	Name = list;
 	let Sort = true;
 
-	if (list_data[Name].extra_data == true)) {
+	if (list_data[Name].extra_data == true) {
 		for (var Item of Object.keys(list_data[Name].drinks)) {
 			if (Item.includes('__')) {
 				Sort = false;
