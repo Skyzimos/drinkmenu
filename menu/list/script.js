@@ -77,8 +77,9 @@ let Load = Module('_load', function(Name) {
 	};
 	
 	subtitle.textContent = list_data[Name].subtitle;
-	
-	Object.keys(list_data[Name].drinks).forEach(Item => {
+
+	if (list_data[Name].extra_data == true) {
+		Object.keys(list_data[Name].drinks).forEach(Item => {
 		if (Item.includes('__')) {
 			let name = Item.replace('__', '');
 			let clone = document.querySelector('.subsection').cloneNode(true);
@@ -114,6 +115,44 @@ let Load = Module('_load', function(Name) {
 			}
 		}
 	});
+	} else {
+		list_data[Name].drinks.forEach(Item => {
+		if (Item.includes('__')) {
+			let name = Item.replace('__', '');
+			let clone = document.querySelector('.subsection').cloneNode(true);
+
+			clone.style.display = 'block';
+			clone.textContent = name;
+			container.appendChild(clone);
+		} else {
+			let clone = document.querySelector('.button').cloneNode(true);
+			let arrow = document.querySelector('.arrow-icon').cloneNode(true);
+
+			clone.style.display = 'block';
+			clone.textContent = Item;
+			clone.appendChild(arrow);
+			container.appendChild(clone);
+
+			if (Item.includes('Pepsi')) {
+				clone.classList.add('no-click');
+				clone.removeChild(arrow)
+			} else {
+				if (list_data[Name].clickable == true) {
+					clone.addEventListener('click', function() {
+						if (production) {
+							window.location.href = '/drinkmenu/menu/view/?d=' + Encrypt(Item !== 'Cabernet Sauvignon‎ ‎ ‎ ‎(Sycamore Lane)' ? Item : 'Cabernet Sauvignon (Sycamore Lane)');
+						} else {
+							window.location.href = '/menu/view/?d=' + Encrypt(Item !== 'Cabernet Sauvignon‎ ‎ ‎ ‎(Sycamore Lane)' ? Item : 'Cabernet Sauvignon (Sycamore Lane)');
+						}
+					})
+				} else {
+					clone.classList.add('no-click');
+					clone.removeChild(arrow);
+				}
+			}
+		}
+	});
+	}
 });
 
 let Page = Module('_title', function(Name) {
