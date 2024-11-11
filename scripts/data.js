@@ -26,6 +26,7 @@ const event = new CustomEvent('__share_data', {
             },
             ['Tap Beers']: {
                 subtitle: '-',
+                extra_data: false,
                 clickable: false,
                 drinks: [
                     'Coors Light',
