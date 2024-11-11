@@ -52,15 +52,28 @@ let Load = Module('_load', function(Name) {
 	Name = list;
 	let Sort = true;
 
-	for (var Item of Object.keys(list_data[Name].drinks)) {
-		if (Item.includes('__')) {
-			Sort = false;
-			break;
+	if (list_data[Name].extra_data == true)) {
+		for (var Item of Object.keys(list_data[Name].drinks)) {
+			if (Item.includes('__')) {
+				Sort = false;
+				break;
+			}
+		}
+	} else {
+		for (var Item of list_data[Name].drinks) {
+			if (Item.includes('__')) {
+				Sort = false;
+				break;
+			}
 		}
 	}
 
 	if (Sort) {
-		Object.keys(list_data[Name].drinks).sort();
+		if (list_data[Name].extra_data == true) {
+			Object.keys(list_data[Name].drinks).sort();
+		} else {
+			list_data[Name].drinks.sort();
+		}
 	};
 	
 	subtitle.textContent = list_data[Name].subtitle;
