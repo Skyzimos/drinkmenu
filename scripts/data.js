@@ -233,7 +233,8 @@ const event = new CustomEvent('__share_data', {
                     'White Zinfandel (Buehler)',
                     'Chardonnay (Hess)',
                     'Sauvignon Blanc (Sutter Home)',
-                    'Cabernet Sauvignon‎ ‎ ‎ ‎(Sycamore Lane)'
+                    'Cabernet Sauvignon‎ ‎ ‎ ‎(Sycamore Lane)',
+                    'Moscoto',
                 ]
             },
             ['Liquors']: {
