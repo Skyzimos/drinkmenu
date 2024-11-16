@@ -325,7 +325,7 @@ const event = new CustomEvent('__share_data', {
                     'Red Bull',
                     'Red Bull (Sugar Free)',
                     'Shirley Temple',
-                    "O'doul's Amber",
+                    'Budweiser 0.0%,
                     'Orange Juice',
                     'Cranberry Juice',
                     'Pineapple Juice',
