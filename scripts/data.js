@@ -45,7 +45,7 @@ const event = new CustomEvent('__share_data', {
                     'Liftbridge Mango Blonde',
                     'Kona Big Wave',
                     'Bells Two Hearted',
-                    '3 Floyds Zombie Dust',
+                    'III Floyds Zombie Dust',
                 ]
             },
             ['Seltzers']: {
