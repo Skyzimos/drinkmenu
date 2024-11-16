@@ -43,7 +43,9 @@ const event = new CustomEvent('__share_data', {
                     'Summit EPA',
                     'Shiner Bock',
                     'Liftbridge Mango Blonde',
-                    'Kona Big Wave'
+                    'Kona Big Wave',
+                    'Bells Two Hearted',
+                    '3 Floyds Zombie Dust',
                 ]
             },
             ['Seltzers']: {
