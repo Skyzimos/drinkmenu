@@ -322,15 +322,22 @@ const event = new CustomEvent('__share_data', {
                 extra_data: false,
                 clickable: true,
                 drinks: [
+                    '__Beers',
                     'Heineken 0.0%',
+                    'Budweiser 0.0%',
+
+                    '__Caffeinated Drinks',
                     'Red Bull',
                     'Red Bull (Sugar Free)',
-                    'Shirley Temple',
-                    'Budweiser 0.0%',
-                    'Orange Juice',
+
+                    '__Fruit Juices',
                     'Cranberry Juice',
-                    'Pineapple Juice',
                     'Grapefruit Juice',
+                    'Orange Juice',
+                    'Pineapple Juice',
+
+                    '__Miscellaneous',
+                    'Shirley Temple',
                     'Pepsi Products'
                 ]
             }
