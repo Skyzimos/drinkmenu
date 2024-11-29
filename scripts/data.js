@@ -38,7 +38,7 @@ const event = new CustomEvent('__share_data', {
                     'Warpigs Foggy Geezer',
                     'Michelob Golden Light',
                     'Voodoo Ranger 1985 Mango',
-                    'Sam Adams Octoberfest',
+                    'Winter Lager',
                     'Surly Furious',
                     'Summit EPA',
                     'Shiner Bock',
