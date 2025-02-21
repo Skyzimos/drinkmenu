@@ -33,19 +33,21 @@ const event = new CustomEvent('__share_data', {
                     'Miller Lite',
                     'Fresh Squeezed IPA',
                     'Castle Danger Cream Ale',
-                    'Downeast Blackberry',
+                    'Downeast Raspberry',
                     'Blue Moon',
                     'Warpigs Foggy Geezer',
                     'Michelob Golden Light',
                     'Voodoo Ranger 1985 Mango',
-                    'Winter Lager',
                     'Surly Furious',
                     'Summit EPA',
                     'Shiner Bock',
                     'Liftbridge Mango Blonde',
                     'Kona Big Wave',
                     'Bells Two Hearted',
-                    'III Floyds Zombie Dust',
+                    '1911 Honeycrisp',
+                    'Sam Adams Winter Lager',
+                    'Lupulin Fashion Mullet',
+                    'Garage Beer',
                 ]
             },
             ['Seltzers']: {
@@ -338,6 +340,7 @@ const event = new CustomEvent('__share_data', {
 
                     '__Miscellaneous',
                     'Shirley Temple',
+                    'Bottled Water',
                     'Pepsi Products'
                 ]
             }
