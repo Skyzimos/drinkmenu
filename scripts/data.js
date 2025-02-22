@@ -245,7 +245,7 @@ const event = new CustomEvent('__share_data', {
                 clickable: false,
                 drinks: [
                     '__Vodkas',
-                    'Philips',
+                    'Rail',
                     'Tito\'s',
                     'Stoli',
                     'Svedka',
@@ -260,13 +260,13 @@ const event = new CustomEvent('__share_data', {
                     'Ciroc',
 
                     '__Gin',
-                    'Philips',
+                    'Rail',
                     'Tanqueray',
                     'Sapphire',
                     'Hendrick\'s',
 
                     '__Tequila',
-                    'Philips',
+                    'Rail',
                     'Jose Cuervo',
                     '1800',
                     'Don Julio Blanco',
@@ -275,7 +275,7 @@ const event = new CustomEvent('__share_data', {
                     'Casamigos Reposado',
 
                     '__Rum',
-                    'Philips',
+                    'Rail',
                     'Captain Morgan',
                     'Bacardi',
                     'Bacardi Limon',
@@ -284,7 +284,7 @@ const event = new CustomEvent('__share_data', {
                     'Myers\'s Dark',
 
                     '__Whiskey',
-                    'Philips',
+                    'Rail',
                     'Jameson',
                     'Jack Daniel\'s',
                     'Jack Fire',
@@ -309,7 +309,7 @@ const event = new CustomEvent('__share_data', {
                     'Hennessy',
 
                     '__Brandy',
-                    'Philips',
+                    'Rail',
                     'Christian Brothers',
                     'E&J',
 
