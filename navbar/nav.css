@@ -1,3 +1,18 @@
+.background {
+    background-color: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	overflow-x: hidden;
+    
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
 .topbar-rightcontent {
 	position: absolute;
 	right: 20px;
