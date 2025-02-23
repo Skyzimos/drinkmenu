@@ -180,6 +180,9 @@ const event = new CustomEvent('__share_data', {
                     'Courtney\'s Coffee': {
                         description: 'Vodka, Bailey\'s, Kahlua, Iced Coffee.'
                     },
+                    'Moscow Mule': {
+                        description: 'Vodka, Lime Juice, Ginger Beer.'
+                    },
                     'Old Fashioned': {
                         description: 'Whiskey/Bourbon, Bitters, Starry.'
                     },
