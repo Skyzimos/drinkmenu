@@ -60,7 +60,7 @@ const event = new CustomEvent('__share_data', {
                     'White Claw (Peach)',
                     'Carbliss (Lemon-Lime)',
                     'Carbliss (Black Raspberry)',
-                    'Liftbridge (Grape Ape)',
+                    'Lift Bridge (Grape Ape)',
                 ]
             },
             ['Shots']: {
@@ -242,7 +242,7 @@ const event = new CustomEvent('__share_data', {
                     'Chardonnay (Hess)',
                     'Sauvignon Blanc (Sand Point)',
                     'Cabernet Sauvignon‎ ‎ ‎ ‎(Sycamore Lane)',
-                    'Moscoto (Sand Point)',
+                    'Moscato (Sand Point)',
                     'Pinot Grigio (Sand Point)',
                 ]
             },
