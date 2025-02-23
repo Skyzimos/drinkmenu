@@ -59,6 +59,8 @@ document.addEventListener('__share_data', (__shared_data) => {
 					break;
 				}
 			}
+
+			console.log(Sort)
 		} else {
 			for (var Item of list_data[Name].drinks) {
 				if (Item.includes('__')) {
@@ -69,12 +71,19 @@ document.addEventListener('__share_data', (__shared_data) => {
 		}
 
 		if (Sort) {
-			if (list_data[Name].extra_data == true) {
-				Object.keys(list_data[Name].drinks).sort();
+			if (list_data[Name].extra_data === true) {
+				const sortedKeys = Object.keys(list_data[Name].drinks).sort();
+				const sortedDrinks = {};
+				
+				sortedKeys.forEach(key => {
+					sortedDrinks[key] = list_data[Name].drinks[key];
+				});
+
+				list_data[Name].drinks = sortedDrinks; // Assign sorted object back
 			} else {
 				list_data[Name].drinks.sort();
 			}
-		};
+		}
 
 		subtitle.textContent = list_data[Name].subtitle;
 
