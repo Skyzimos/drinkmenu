@@ -147,6 +147,9 @@ const event = new CustomEvent('__share_data', {
                     'Tokyo Tea': {
                         description: 'Vodka, Rum, Gin, Triple Sec, Sour, Melon Schnapps.'
                     },
+                    'Bloody Mary': {
+                        description: 'Vodka, Bloody Mix.'
+                    },
                     'Bahama Mama': {
                         description: 'Malibu, Banana Schnapps, Orange Juice, Grenadine, Bitters.'
                     },
