@@ -60,6 +60,7 @@ const event = new CustomEvent('__share_data', {
                     'White Claw (Peach)',
                     'Carbliss (Lemon-Lime)',
                     'Carbliss (Black Raspberry)',
+                    'Liftbridge (Grape Ape)',
                 ]
             },
             ['Shots']: {
@@ -161,6 +162,9 @@ const event = new CustomEvent('__share_data', {
                     'Lime Margarita': {
                         description: 'Tequila, Triple Sec, Margarita Mix, Lime.'
                     },
+                    'Strawberry Margarita': {
+                        description: 'Tequila, Triple Sec, Margarita Mix, Strawberry Puree.'
+                    },
                     'Liquid Marijuana': {
                         description: 'Captain, Malibu, Midori, Blue Caraco, Pineapple.'
                     },
@@ -232,11 +236,11 @@ const event = new CustomEvent('__share_data', {
                     'Red Blend (Ménage à Trois)',
                     'Merlot (Barone Fini)',
                     'Prosecco (Zonin)',
-                    'White Zinfandel (Buehler)',
                     'Chardonnay (Hess)',
-                    'Sauvignon Blanc (Sutter Home)',
+                    'Sauvignon Blanc (Sand Point)',
                     'Cabernet Sauvignon‎ ‎ ‎ ‎(Sycamore Lane)',
-                    'Moscoto',
+                    'Moscoto (Sand Point)',
+                    'Pinot Grigio (Sand Point)',
                 ]
             },
             ['Liquors']: {
@@ -263,7 +267,7 @@ const event = new CustomEvent('__share_data', {
                     'Rail',
                     'Tanqueray',
                     'Sapphire',
-                    'Hendrick\'s',
+                    'Beefeater',
 
                     '__Tequila',
                     'Rail',
