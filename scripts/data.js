@@ -125,6 +125,12 @@ const event = new CustomEvent('__share_data', {
                     'F***ing Awesome': {
                         description: 'Captain, Soco, Malibu, Peach, Amaretto, Apple, Grape, Pineapple, Orange Juice, Sour, Cranberry.'
                     },
+                    'Liquid Marijuana': {
+                        description: 'Captain, Malibu, Midori, Blue Caraco, Pineapple.'
+                    },
+                    'Southern Hospitality': {
+                        description: 'Southern Comfort, Watermelon Schnapps, Red Bull.'
+                    },
                 }
             },
             ['Cocktails']: {
@@ -165,9 +171,6 @@ const event = new CustomEvent('__share_data', {
                     'Strawberry Margarita': {
                         description: 'Tequila, Triple Sec, Margarita Mix, Strawberry Puree.'
                     },
-                    'Liquid Marijuana': {
-                        description: 'Captain, Malibu, Midori, Blue Caraco, Pineapple.'
-                    },
                     'Blue Hawaiian': {
                         description: 'Malibu, Vodka, Sour, Blue Caraco.'
                     },
@@ -182,9 +185,6 @@ const event = new CustomEvent('__share_data', {
                     },
                     'White Russian': {
                         description: 'Vodka, Kahlua, Cream.'
-                    },
-                    'Southern Hospitality': {
-                        description: 'Southern Comfort, Watermelon Schnapps, Red Bull.'
                     },
                     'Greyhound': {
                         description: 'Vodka, Grapefruit.'
