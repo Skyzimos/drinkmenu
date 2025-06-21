@@ -284,6 +284,7 @@ const event = new CustomEvent('__share_data', {
                     'Jose Cuervo',
                     '1800',
                     'Don Julio Blanco',
+                    'Don Julio Reposado',
                     'Patron Blanco',
                     'Casamigos Blanco',
                     'Casamigos Reposado',
