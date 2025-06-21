@@ -59,6 +59,7 @@ const event = new CustomEvent('__share_data', {
                     'White Claw (Raspberry)',
                     'White Claw (Peach)',
                     'White Claw (Grape)',
+                    'White Claw (Blackberry)',
                     'Carbliss (Lemon-Lime)',
                     'Carbliss (Black Raspberry)',
                     'Lift Bridge (Grape Ape)',
