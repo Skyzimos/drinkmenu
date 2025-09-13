@@ -22,7 +22,6 @@ const event = new CustomEvent('__share_data', {
                     'Miller High Life',
                     'Stella Artois',
                     'Bud Light Lime',
-                    'Angry Orchard',
                 ]
             },
             ['Tap Beers']: {
@@ -38,16 +37,16 @@ const event = new CustomEvent('__share_data', {
                     'Blue Moon',
                     'Warpigs Foggy Geezer',
                     'Michelob Golden Light',
-                    'Twisted Tea',
+                    'Odell Brewery Oktoberfest',
                     'Surly Furious',
                     'Summit EPA',
                     'Shiner Bock',
                     'Liftbridge Mango Blonde',
                     'Kona Big Wave',
-                    'Boulevard Tropic Slam',
-                    'Leinekugels Tropical Hazy IPA',
-                    'Lupulin Fashion Mullet',
-                    'Golden Road Mango Cart',
+                    'Busch Light',
+                    'Samuel Adams Oktoberfest',
+                    'Angry Orchard',
+                    'Saga Hazy IPA',
                 ]
             },
             ['Seltzers']: {
