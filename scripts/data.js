@@ -47,6 +47,7 @@ const event = new CustomEvent('__share_data', {
                     'Samuel Adams Oktoberfest',
                     'Angry Orchard',
                     'Saga Hazy IPA',
+                    'Leinenkiugels (Seasonal)',
                 ]
             },
             ['Seltzers']: {
